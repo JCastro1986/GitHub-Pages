@@ -1,15 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Greek gods</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-<body>
-    <div id="plot"></div>
-    <script src="data.js"></script>
-    <script src="plots.js"></script>
+<link rel="stylesheet" href="style.css">
+
+<body class="bg-info">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1 style="color:white">Belly Button Biodiversity Dashboard</h1>
+        <p style="color:white">Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="well">
+        <p>
+          It is sought through a given dataset to obtain a more complete vision of the bacteria that each explored subject has through graphs that summarize the information in an easy to understand and handle way, so we can make much more agile comparisons between subject and subject.
+        </p>
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="well">
+          <h5>Select the graph:</h5>
+          <select id="selGraph" onchange="optionChartChanged()"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+        <div class="well col-md-8 text-center" >
+        <p id="bar-text">
+          This graph seeks to represent the top 10 bacteria present
+          in each subject organized from largest to smallest. 
+        </p>
+      </div>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+        <div class="well col-md-8 text-center">
+          <p>
+            You simply want to visualize the frequency of washing and by means of colors it is determined in which place it is, from the optimal to the least optimal.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="well col-md-12">
+        <div id="bubble"></div>
+        <div class="col-md-12 text-center">
+          <p id="bubble-text">
+            It seeks to represent all the bacteria present by each subject, depending on the value, a size is assigned to be graphed, and based on its ids, it is grouped by colors, so we could see the categories graphically.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
 </body>
+
 </html>
